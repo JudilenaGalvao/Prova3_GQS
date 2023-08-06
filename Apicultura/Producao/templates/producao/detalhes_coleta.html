@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block subtitulo %}
+Detalhes da Coleta
+{% endblock %}
+
+{% block conteudo %}
+
+<h3>Informações da Coleta</h3>
+<p>ID: {{ coleta.id }}</p>
+<p>Criação: {{ coleta.criacao.id }}</p>
+<p>Data: {{ coleta.data }}</p>
+<p>Quantidade: {{ coleta.quantidade }}</p>
+
+<a class="btn btn-primary" href="{% url 'Producao:editar_coleta' coleta_id=coleta.pk %}">Editar</a>
+<a class="btn btn-danger" href="{% url 'Producao:deletar_coleta' coleta_id=coleta.pk %}">Deletar</a>
+
+<a href="{% url 'Producao:listar_coletas' %}">Voltar para a lista de coletas</a>
+
+{% endblock %}
+
+{% block rodape %}
+Bem-vindo ao sistema de apicultura
+{% endblock %}

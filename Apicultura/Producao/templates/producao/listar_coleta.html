@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block subtitulo %}
+Lista de coletas
+{% endblock %}
+
+{% block conteudo %}
+
+<strong>{{lista_coletas|length}} Coletas </strong>
+    {% for coleta in lista_coletas  %}
+        <p id="id_{{coleta.criacao}}_{{coleta.data}}_{{coleta.quantidade}}">{{coleta}}
+            <a id="id_button_{{criacao.pk}}" class="btn btn-success" href="{% url 'Producao:detalhes_coleta' coleta_id=coleta.pk %}">Detalhes</a>
+        </p>
+
+
+    {% endfor %}
+
+{% endblock %}

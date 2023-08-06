@@ -1,0 +1,15 @@
+{{% extends "base.html" %}
+
+{% block title %}
+Editar Criação
+{% endblock %}
+
+{% block conteudo %}
+  <h1>Editar Criação</h1>
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Salvar</button>
+  </form>
+  <a href="{% url 'Producao:listar_criacao' %}">Voltar para a lista de criações</a>
+{% endblock %}

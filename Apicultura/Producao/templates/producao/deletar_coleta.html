@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+  <h1>Deletar Coleta</h1>
+  <p>Você está prestes a deletar a seguinte coleta:</p>
+  <p>Criação: {{ coleta.criacao }}</p>
+  <p>Data: {{ coleta.data }}</p>
+  <p>Quantidade: {{ coleta.quantidade }}</p>
+
+  <p>Deseja continuar com a exclusão?</p>
+  <form method="post">
+    {% csrf_token %}
+    <input type="submit" name="confirmacao" value="Excluir">
+    <input type="submit" name="confirmacao" value="Cancelar">
+  </form>
+{% endblock %}

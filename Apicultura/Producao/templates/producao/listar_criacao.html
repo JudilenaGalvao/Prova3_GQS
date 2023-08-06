@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block subtitulo %}
+Lista de criações
+{% endblock %}
+
+{% block conteudo %}
+
+<strong>{{lista_criacao|length}} Criacoes </strong>
+    {% for criacao in lista_criacao  %}
+        <p id="id_{{criacao.raca}}_{{criacao.data_entrada}}">{{criacao}}
+            <a id="id_button_{{criacao.pk}}" class="btn btn-success" href="{% url 'Producao:detalhes_criacao' criacao_id=criacao.pk %}">Detalhes</a>
+        </p>
+    {% endfor %}
+
+{% endblock %}
+
+{% block rodape %}
+Bem vindo ao sistema de apicultura
+{% endblock %}

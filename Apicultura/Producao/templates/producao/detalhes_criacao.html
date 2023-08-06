@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block subtitulo %}
+Detalhes da Criação
+{% endblock %}
+
+{% block conteudo %}
+
+<h3>Informações da Criação</h3>
+<p>ID: {{ criacao.id }}</p>
+<p>Raça: {{ criacao.raca }}</p>
+<p>Data de Entrada: {{ criacao.data_entrada }}</p>
+
+<a class="btn btn-primary" href="{% url 'Producao:editar_criacao' criacao_id=criacao.id %}">Editar</a>
+<a href="{% url 'Producao:listar_criacao' %}">Voltar para a lista de criações</a>
+
+{% endblock %}
+
+{% block rodape %}
+Bem-vindo ao sistema de apicultura
+{% endblock %}

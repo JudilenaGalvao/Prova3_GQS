@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block subtitulo %}
+Relatório de Coleta
+{% endblock %}
+
+{% block conteudo %}
+<h3>Soma da Quantidade Coletada por Mês nos Últimos 12 Meses:</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Mês</th>
+            <th>Quantidade</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in relatorio %}
+        <tr>
+            <td>{{ item.mes }}</td>
+            <td>{{ item.quantidade }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
